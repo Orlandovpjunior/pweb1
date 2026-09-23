@@ -1,23 +1,58 @@
-.principal{
-    margin-left: 5%;
-    margin-right:5%;
-    margin-bottom:2%;
-    border: 5px dashed black;
-    height: 80vh;
-    padding: 50px;
-    font-size: 1em;
+*{
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+.principal{
+    font-size: 1em;
 }
 
 .article{
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#nome_empresa{
     font-size: 1em;
 }
 
 .secundaria{
     background-color: lightblue;
+}
+
+.content{
+    display: flex;
+    padding-left: 10px;
+}
+
+header > h1{
+    font-size: 1.2em;
+    width: 65vw;
+}
+.header_principal div {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header{
+    display: flex;
+    background-color: #9AD8FF;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+nav a {
+    padding: 3px;
+    text-decoration: none;
+}
+
+aside{
+    padding: 30px;
+    background-color: #3BFF94;
+}
+
+footer{
+    background-color: #FFA268;
+    padding: 20px;
+    text-align: center;
+}
+
+footer h1{
+    font-size: 1.2em;
 }
