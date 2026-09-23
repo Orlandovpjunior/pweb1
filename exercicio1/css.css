@@ -3,17 +3,21 @@
     margin-right:5%;
     margin-bottom:2%;
     border: 5px dashed black;
-    height: 800px;
+    height: 80vh;
     padding: 50px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
-    font-size: 4em;
+.article{
+    font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
 }
 
-.principal_ex1{
-    font-size: 2em;
-    font-family: Arial, Helvetica, sans-serif;
+#nome_empresa{
+    font-size: 1em;
+}
+
+.secundaria{
+    background-color: lightblue;
 }
