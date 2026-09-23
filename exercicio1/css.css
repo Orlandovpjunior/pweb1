@@ -20,6 +20,15 @@
     padding-left: 10px;
 }
 
+.paginas{
+    padding: 30px;
+    text-align: center;
+}
+
+.paginas a {
+    padding: 10px;
+}
+
 header > h1{
     font-size: 1.2em;
     width: 65vw;
@@ -37,9 +46,12 @@ header{
     padding: 10px;
 }
 
+a{
+    text-decoration: none;
+}
+
 nav a {
     padding: 3px;
-    text-decoration: none;
 }
 
 aside{
