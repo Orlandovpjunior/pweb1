@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">Digite os números aqui
+    <button onclick="resposta()">enviar</button>
+    <p id="result"></p>
+    <script>
+        function resposta() {
+            var numeros = document.getElementById("txt").value
+                .split(",")
+                .map(Number);
+            var list = [];
+            for (let index = 0; index < numeros.length; index++) {
+                
+                if (numeros[index] % 2 == 1 && numeros[index] % 3 == 0) {
+                    list.push(numeros[index]);
+                }
+            }
+
+            var result = list.reduce((total,numero) => total += numero,0);
+
+            document.getElementById('result').textContent = `Resultado: ${result}`;
+        }
+    </script>
+</body>
+</html>

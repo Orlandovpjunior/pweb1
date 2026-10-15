@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">Digite os números aqui
+    <button onclick="resposta()">enviar</button>
+    <p id="result"></p>
+    <script>
+        function resposta() {
+            var numeros = document.getElementById("txt").value
+                .split(",")
+                .map(Number);
+            var lista = [];
+
+            numeros.forEach(element => {
+                lista.push(element);
+            });
+
+            lista.reverse();
+            document.getElementById('result').textContent = `Lista Invertida: ${lista}`;
+        }
+    </script>
+</body>
+</html>

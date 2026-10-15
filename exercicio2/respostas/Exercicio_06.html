@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">Digite os números aqui
+    <button onclick="resposta()">enviar</button>
+    <p id="result"></p>
+    <script>
+        function resposta() {
+            var numeros = document.getElementById("txt").value
+                .split(",")
+                .map(Number);
+
+            for (let i = 0; i < numeros.length - 1; i++) {
+                for (let j = i + 1; j < numeros.length; j++) {
+                    if (numeros[i] > numeros[j]) {
+                        let temp = numeros[i];
+                        numeros[i] = numeros[j];
+                        numeros[j] = temp;
+                    }
+                }
+            }
+
+            document.getElementById('result').textContent = `Lista Ordenada: ${numeros.join(', ')}`;
+
+
+        }
+        
+
+
+    </script>
+</body>
+</html>

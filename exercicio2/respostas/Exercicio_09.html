@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">Digite os números aqui
+    <button onclick="resposta()">enviar</button>
+    <p id="result"></p>
+    <script>
+        function resposta() {
+            var numeros = document.getElementById("txt").value
+                .split(",")
+                .map(Number);
+            var negativos = 0;
+            var positivos = 0;
+            var media = 0;
+
+            numeros.forEach(element => {
+                if (element < 0) {
+                    negativos += 1;
+                    media += element;
+                }else{
+                    positivos += 1
+                    media += element;
+                }
+            });
+
+            media = media/numeros.length;
+
+            document.getElementById('result').textContent = ` Negativos = ${negativos}` +
+            ` Positivos = ${positivos}` + ` Media = ${media}` + ` %positivos = ${(positivos/numeros.length) * 100}`
+             + ` %negativos = ${(negativos/numeros.length) * 100}`;
+            
+        }
+    </script>
+</body>
+</html>
