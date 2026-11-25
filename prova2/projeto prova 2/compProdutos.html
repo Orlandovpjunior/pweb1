@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styleTabProdutos.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <header>
+        <h1>Prova da Loja de Informática</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="compProdutos.html">Produtos</a>
+            <a href="carrinho.html">Carrinho</a>
+            <a href="trocaProduto.html">Troca Produto</a>
+        </nav>
+        <div class="carrinho">
+            <span id="carrinho-contagem">0</span>
+            <img src="./img/cart-icon.png" alt="Carrinho de Compras">
+        </div>
+    </header>
+    <main>
+        <section class="section__produtos">
+            <div class="botoes">
+                <button onclick="alterarValoresTabela()">Produtos Externos</button>
+            </div>
+            <h1>Produtos da Concorrência</h1>
+            <table id="tabelaProdutos">
+                <thead>
+                    <tr>
+                        <th>Nome do Produto</th>
+                        <th>Preço</th>
+                        <th>Foto do Produto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="nome1">Notebook</td>
+                        <td id="preco1">R$ 3.500,00</td>
+                        <td><img id="img1" src="./img/notebook.jpg" alt="Notebook" width="80"></td>
+                    </tr>
+                    <tr>
+                        <td id="nome2">Mouse</td>
+                        <td id="preco2">R$ 50,00</td>
+                        <td><img id="img2" src="./img/mouse.jpg" alt="Mouse" width="80"></td>
+                    </tr>
+                    <tr>
+                        <td id="nome3">Teclado</td>
+                        <td id="preco3">R$ 150,00</td>
+                        <td><img id="img3" src="./img/teclado.jpg" alt="Teclado" width="80"></td>
+                    </tr>
+                    <tr>
+                        <td id="nome4">Leitor Biométrico</td>
+                        <td id="preco4">R$ 350,00</td>
+                        <td><img id="img4" src="./img/leitorBiometrico.jpg" alt="Leitor Biométrico" width="80"></td>
+                    </tr>
+                    <tr>
+                        <td id="nome5">Passador Slide</td>
+                        <td id="preco5">R$ 350,00</td>
+                        <td><img id="img5" src="./img/passadorSlide.jpg" alt="Passador Slide" width="80"></td>
+                    </tr>
+                    <tr>
+                        <td id="nome6">Tablet</td>
+                        <td id="preco6">R$ 2.350,00</td>
+                        <td><img id="img6" src="./img/tablet.jpg" alt="Tablet" width="80"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Minha Loja de Informática - Todos os direitos reservados</p>
+    </footer>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

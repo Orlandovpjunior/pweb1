@@ -83,3 +83,113 @@ const maiorFrase = (array) => {
 
 console.log(analisarTexto(frases, contarPalavras)) 
 console.log(analisarTexto(frases, maiorFrase)) 
+
+// Questão 6
+
+const colocarTodasLetrasEmMaiusculoEm500ms = (param) => {
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+            if (typeof param !== 'string') {
+                return reject(param)
+            }else{
+                return resolve(param.toUpperCase())
+            }
+        }, 500)
+    })
+}
+
+const inverteTodasLetras = (param) => {
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+            if (typeof param !== 'string') {
+                return reject(param)
+            }
+            resolve(param.split("").reverse().join(""))
+        }, 500)
+    })
+}
+
+colocarTodasLetrasEmMaiusculoEm500ms("olá!")
+    .then(inverteTodasLetras)
+    .then((resultadoFn) => console.log(resultadoFn))
+    .catch((error) => console.log(error))
+
+// Questão 7
+
+const esperar = (ms) => new Promise((resolve) => setTimeout(resolve,ms))
+
+const colocarTodasLetrasEmMaiusculoEm500ms_2 = async (param) => {
+    await esperar(500)
+    if (typeof param !== 'string') {
+        throw param
+    }
+
+    return param.toUpperCase()
+}
+
+const inverteTodasLetras_2 = async (param) => {
+    await esperar(500)
+
+    if (typeof param !== 'string') {
+        throw param
+    }
+
+    return param.split("").reverse().join("")
+}
+
+const executar = async (texto) => {
+    try {
+        const maiusculo = await colocarTodasLetrasEmMaiusculoEm500ms_2(texto)
+        const invertido = await inverteTodasLetras_2(maiusculo)
+        console.log(invertido)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const main = async () => {
+    await executar("olá!")
+    await executar(123)    
+}
+
+main()
+
+// Questão 8
+
+const api = "https://6b06ea2557fa1297bb566c35.mockapi.io/produtos/produtos"
+
+const buscarProdutos = async () => {
+    const resposta = await fetch(api)
+    return resposta.json()
+}
+
+const cadastrarProduto = async (produto) => {
+    const resposta = await fetch(api, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({...produto, status:"Criado"})
+    })   
+
+    return resposta.json()
+}
+
+const main_2 = async () => {
+    try {
+        const produtos = await buscarProdutos()
+        produtos.forEach(p => console.log(`Produto ${p.nome} | Preço: R$ ${p.preco.toFixed(2)}`));
+
+        const novo = {nome: 'Headset', preco: 250}
+        produtos.push(novo)
+
+        const criado = await cadastrarProduto(novo)
+        console.log(`Produto ${criado.nome} criado com sucesso! Status: ${criado.status}`)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+main_2()
+
+
